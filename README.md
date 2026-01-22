@@ -29,16 +29,11 @@ This notebook executes a clustering analysis on the 29 candidate wind farms to i
 
 - 02: Training Source Models
 
-This notebook trains the library of GP models using two years of historical data. It performs a grid search to determine the optimal time-period length (p) and number of latent clusters (K) by maximising the composite quality score defined in the methodology. Using this optimal configuration, it trains a VAE to extract latent features and subsequently trains distinct GP models for each identified weather cluster.
+This notebook trains the library of GP models using two years of historical data. It performs a grid search to determine the optimal time-period length (p) and number of latent clusters (K) by maximising the composite quality score defined in the methodology. Using this optimal configuration, it trains a VAE to extract latent features and subsequently trains distinct GP models for each identified weather cluster. To facilitate reproducibility, the pre-trained VAE models for all three random seeds have been archived in the model directory.
 
 - 03: Transfer Learning
 
-This notebook implements the transfer learning methodology across the eight target wind farms (Horns Rev, Seagreen, Gemini, Hollandse Noord, Dieppe, Moray Firth, Kriegers Flak and East Anglia One). Additionally, it executes a comparative baseline by training separate GP models from scratch on the target data to benchmark the transfer performance.
-
+This notebook implements the transfer learning methodology across the eight target wind farms (Horns Rev, Seagreen, Gemini, Hollandse Noord, Dieppe, Moray Firth, Kriegers Flak and East Anglia One). Additionally, it executes a comparative baseline by training separate GP models from scratch on the target data to benchmark the transfer performance. To facilitate reproducibility, the requisite metadata and pre-trained VAE artificats needed in the transfer pipeline for all three seeds are available in the models directory. 
 
 ### Results 
 A breakdown of the results for all three random seeds (42, 63, 84) used in the final paper can be found in "Results of transfer learning.xslx". This file contains the source GP results as well as the transfer learning forecasting performance for all eight target farms, stratified by cluster and data capacity.
-
-
-## License
-
